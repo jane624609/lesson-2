@@ -28,3 +28,12 @@ while True:
         print('啟動模式二')
     else:
         print('只能輸入 1/2/q')
+
+
+#讓使用者重複輸入名字，一但輸入q則離開
+while True:
+    name = input ('請輸入名字: ')
+    if name == 'q':
+        break
+    else:
+        print('嗨', name)
