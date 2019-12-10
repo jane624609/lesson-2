@@ -22,7 +22,7 @@ while True:
     mode = input('請輸入遊戲模式: ')
     if mode == 'q': #quit
         break #只有寫這才會離開
-    elif mode == '1':
+    elif mode == '1':  #因為input是字串，所以這也是用字串做比較
         print('啟動模式一')
     elif mode == '2':
         print('啟動模式二')
