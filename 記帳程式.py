@@ -15,4 +15,14 @@ while  True:
     products.append(p) #或是p直接改products.append([name, price])
 print (products )
 #練習存取二維清單
-products[0][0]  #第一個大清單裡的第一個(name)
+print (products[0][0])  #第一個大清單裡的第一個(name)
+
+#for loop搞清楚每個東西是甚麼
+for p in products:
+    print(p)  #所有大清單
+
+for p in products:
+    print(p[0])  #所有大清單的[0]
+
+for p in products:
+    print(p[0], '的價格是', p[1])  #所有大清單的第一個跟小清單的第二個位置
