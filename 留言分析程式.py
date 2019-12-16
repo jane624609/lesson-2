@@ -31,4 +31,26 @@ for d in data:
     if len(d) < 100:
         new.append(d)
 print('一共有', len(new), '筆留言長度小於100')        
+print(new[0])  #印出第一筆
 
+#清單的篩選，找出有good字的
+good = []
+for d in data:
+    if 'good' in d:    #如果good有在裡面，裝進清單
+        good.append(d)
+print('一共有', len(good), '筆留言提到good')        
+print(good[0])  #印出第一筆
+
+#清單快寫法list comprehension，同等上面找good功能那四行
+good = [d for d in data if 'good' in d]   #d是good.append(d)的d
+good = [1 for d in data if 'good' in d]   #改成裝進去1 good.append(1)
+#print(good)  這樣會出現兩萬多個1，因為只要有good就會把1放進去清單
+
+#清單快寫，找出現bad的，用對錯方式顯示
+bad = ['bad' in d for d in data]  #'bad' in d是一個運算，所以出來的只是true或是false，因此會print出一百萬筆對錯
+print(bad)
+
+#上方快寫的原始寫法
+bad = []
+for  d in data:
+    bad.append('bad' in d)
