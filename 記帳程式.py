@@ -1,3 +1,13 @@
+#讀取檔案(將讀到的寫入)
+#用strip移除換行符號\n
+#用split(',')做逗點分割
+products = []
+with open('products.csv', 'r') as f:
+    for line in f:
+        name, price= line.strip().split(',')
+        products.append([name, price])
+print(products)
+
 #記帳程式，讓使用者多次輸入購買品項
 #二維度清單(清單內再裝清單)2 dimensional
 products = []
@@ -32,9 +42,15 @@ for p in products:
 #'abc' + '123' = 'abc123'
 #'abc' * 3 = 'abcabcabc'
 
-#寫入檔案
-with open('products.txt', 'w') as f: #txt可以改成csv，會用excel開 #open是打開檔案，沒有檔案會自己開一個，w是寫入模式，as f是當f
+#寫入檔案一
+with open('products.txt', 'w') as f: #open是打開檔案，沒有檔案會自己開一個，w是寫入模式，as f是當f
     for p in products:
-        f.write(p[0] + ',' + p[1] + '\n') #\n是換行，f.write是真正的寫入 #如果是存csv檔中間也要 +,+ 因為這可以讓他換格，不然會擠一起
+        f.write(p[0] + ',' + p[1] + '\n') #\n是換行，f.write是真正的寫入
         #補充:如果前面price = int(price)  改成整數
-        #最後write的p[1]要改成 str(p[1]) 改回字串
+        #最後write的p[1]要改成 str(p[1]) 改回字串，因為加法需要都同類型
+
+#寫入檔案二，excel寫入欄位名稱+處理編碼問題
+with open('products.csv', 'w', encoding='utf-8') as f: #txt可以改成csv，會用excel開  #encoding='utf-8'這可以讓輸入標題的中文字不要變亂碼
+    f.write('商品,價格\n') #作法:在for前加入欄位名
+    for p in products:
+        f.write(p[0] + ',' + p[1] + '\n')#如果是存csv檔中間也要 +,+ 因為這可以讓他換格，不然會擠一起
