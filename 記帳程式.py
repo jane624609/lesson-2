@@ -28,10 +28,13 @@ for p in products:
     print(p[0], '的價格是', p[1])  #所有大清單的第一個跟小清單的第二個位置
 
 #字串可以做加乘，但減跟除不能
+#但加法只能字串跟字串或整數跟整數，不能整數跟字串
 #'abc' + '123' = 'abc123'
 #'abc' * 3 = 'abcabcabc'
 
 #寫入檔案
 with open('products.txt', 'w') as f: #txt可以改成csv，會用excel開 #open是打開檔案，沒有檔案會自己開一個，w是寫入模式，as f是當f
     for p in products:
-        f.write(p[0] + ',' + p[1] + '\n') #\n是換行，f.write是真正的寫入 #如果是存csv檔中間也要+,+因為這可以讓他換格，不然會擠一起
+        f.write(p[0] + ',' + p[1] + '\n') #\n是換行，f.write是真正的寫入 #如果是存csv檔中間也要 +,+ 因為這可以讓他換格，不然會擠一起
+        #補充:如果前面price = int(price)  改成整數
+        #最後write的p[1]要改成 str(p[1]) 改回字串
