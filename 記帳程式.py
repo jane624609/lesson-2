@@ -1,9 +1,12 @@
 #讀取檔案(將讀到的寫入)
 #用strip移除換行符號\n
 #用split(',')做逗點分割
+#用continue使標題(商品，價格)避開不要也匯入，意思是直接跳過到下一回圈
 products = []
 with open('products.csv', 'r') as f:
     for line in f:
+        if '商品,價格' in line:
+            continue #繼續，這次迴圈不執行，直接跳到下一回
         name, price= line.strip().split(',')
         products.append([name, price])
 print(products)
