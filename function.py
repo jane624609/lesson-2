@@ -76,3 +76,14 @@ def is_leap(year):
         return False
     else:
         return True
+
+#寫一個function來算出清單中數字的總數
+#function底該要有一個参數讓使用者投入(停遞進去)一個清單,
+#function底該回停(return)清單中數字的總數・
+#請把function命名為sum_of_list),這樣才可以執行測試·(PS.sum就是總數的意思)
+#預期結果:
+#底該要印出6
+print(sum_of_list([1, 2,3]))
+def sum_of_list(numbers):
+    return(sum(numbers))
+print(sum_of_list([1, 2, 3]))
