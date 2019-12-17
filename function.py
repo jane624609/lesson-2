@@ -61,3 +61,18 @@ def average(numbers):
 print(average([1, 2, 3]))
 print(average([23, 32, 6]))
 print(average([180, 34, 92]))
+
+#判斷是不是閏年(二月會多一天的年)
+#1.公元年分除以4不可整除,為平年
+#2.公元年分除以4可整除但除以100不可整除,為閏年
+#3.公元年分除以100可整除但除以400不可整除,為平年
+#4.公元年分除以400可整除但除以3200不可整除,為間年
+def is_leap(year):
+    if year % 4 != 0:
+        return False
+    elif year % 100 != 0:
+        return True
+    elif year % 400 != 0:
+        return False
+    else:
+        return True
