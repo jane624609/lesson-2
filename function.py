@@ -83,7 +83,7 @@ def is_leap(year):
 #請把function命名為sum_of_list),這樣才可以執行測試·(PS.sum就是總數的意思)
 #預期結果:
 #底該要印出6
-print(sum_of_list([1, 2,3]))
+
 def sum_of_list(numbers):
     return(sum(numbers))
 print(sum_of_list([1, 2, 3]))
