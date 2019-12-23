@@ -1,3 +1,4 @@
+#清單分割法:將字串的部分取出
 
 lines = []
 with open('3.txt', 'r', encoding='utf-8-sig') as f:
