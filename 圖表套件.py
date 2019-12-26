@@ -31,4 +31,5 @@ plt.title('Histogram of IQ')
 plt.text(60, .025, r'$\mu=100,\ \sigma=15$')
 plt.axis([40, 160, 0, 0.03])
 plt.grid(True)
-plt.show()
+#plt.show()
+plt.savefig('123.png')  #存圖，要存圖前面的plt.show()就要註解才存的下來
